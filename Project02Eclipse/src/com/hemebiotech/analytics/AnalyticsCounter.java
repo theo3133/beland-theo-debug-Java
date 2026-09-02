@@ -8,6 +8,24 @@ public class AnalyticsCounter {
 	private static int headacheCount = 0;
 	private static int rashCount = 0;
 	private static int pupilCount = 0;
+	private ISymptomReader symptomReader;
+	private ISymptomWriter symptomWriter;
+
+	public AnalyticsCounter(ISymptomReader symptomReader, ISymptomWriter symptomWriter){
+		this.symptomReader= symptomReader;
+		this.symptomWriter= symptomWriter;
+	}
+
+	public List<String> getSymptoms(){
+
+		
+	}
+
+
+
+
+
+
 	
 	public static void main(String args[]) throws Exception {
 		// first get input
