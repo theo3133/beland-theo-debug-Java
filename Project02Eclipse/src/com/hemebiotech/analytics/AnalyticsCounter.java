@@ -1,4 +1,5 @@
 package com.hemebiotech.analytics;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,9 +20,9 @@ public class AnalyticsCounter {
 	 * @param symptomReader lecteur chargé de récupérer les symptômes
 	 * @param symptomWriter rédacteur chargé d'enregistrer le résultat de l'analyse
 	 */
-	public AnalyticsCounter(ISymptomReader symptomReader, ISymptomWriter symptomWriter){
-		this.symptomReader= symptomReader;
-		this.symptomWriter= symptomWriter;
+	public AnalyticsCounter(ISymptomReader symptomReader, ISymptomWriter symptomWriter) {
+		this.symptomReader = symptomReader;
+		this.symptomWriter = symptomWriter;
 	}
 
 	/**
@@ -30,7 +31,7 @@ public class AnalyticsCounter {
 	 *
 	 * @return la liste des symptômes lus depuis la source de données
 	 */
-	 public List<String> getSymptoms(){
+	public List<String> getSymptoms() {
 		return symptomReader.getSymptoms();
 	}
 
@@ -42,11 +43,11 @@ public class AnalyticsCounter {
 	 */
 	public Map<String, Integer> countSymptoms(List<String> symptoms) {
 		Map<String, Integer> countSymp = new HashMap<String, Integer>();
-		for ( String symptom : symptoms){
-			if (countSymp.containsKey(symptom)){
+		for (String symptom : symptoms) {
+			if (countSymp.containsKey(symptom)) {
 				countSymp.put(symptom, countSymp.get(symptom) + 1);
-			}else{
-				countSymp.put(symptom,1);
+			} else {
+				countSymp.put(symptom, 1);
 			}
 		}
 		return countSymp;
